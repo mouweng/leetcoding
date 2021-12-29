@@ -9,3 +9,4 @@
 
 [Github](https://github.com/mouweng/Leetcoding)
 [Docsify](https://docsify.js.org/#/)
+[Getting Start](https://mouweng.github.io/Leetcoding/#/)
