@@ -12,8 +12,8 @@ class Solution {
         int n = nums.length;
         // nums[a]+nums[b]=nums[d]-nums[c]
         for(int c=2;c<n-1;c++){
-            for(int a=0;a<c-1;a++){
-                int b = c-1;
+            int b = c-1;
+            for(int a=0;a<b;a++){                
                 count.put(nums[a]+nums[b],count.getOrDefault(nums[a]+nums[b],0)+1);
             }
             for(int d=c+1;d<n;d++){
