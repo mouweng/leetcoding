@@ -1,7 +1,5 @@
 # yhc
 
-[leetcode主页](https://leetcode-cn.com/u/yuhuachang/)
-
 ## 2021.12.30
 [846. 一手顺子](https://leetcode-cn.com/problems/hand-of-straights/)
 ```java
