@@ -54,3 +54,20 @@ class Solution {
     }
 }
 ```
+
+### 2021-12-31
+#### [507. 完美数](https://leetcode-cn.com/problems/perfect-number/)
+```java
+class Solution {
+    public boolean checkPerfectNumber(int num) {
+        if (num <= 4) return false;
+        int cnt = 1;
+        for (int i = 2; i <= num / 2; i ++) {
+            if (num % i == 0) {
+                cnt += i;
+            }
+        }
+        return num == cnt ? true : false;
+    }
+}
+```
