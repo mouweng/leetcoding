@@ -1,4 +1,7 @@
-# wyf
+# Mouweng给我冲！
+[[LEETCODE主页](https://leetcode-cn.com/profile/)]
+
+- 1月份目标：LEETCODE数量达到350题
 
 ### 2021-12-29
 #### [1995. 统计特殊四元组](https://leetcode-cn.com/problems/count-special-quadruplets/)
