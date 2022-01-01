@@ -49,3 +49,26 @@ class Solution {
     }
 }
 ```
+## 2022.1.1
+[239. 滑动窗口最大值](https://leetcode-cn.com/problems/sliding-window-maximum/)
+```java
+class Solution {
+    public int[] maxSlidingWindow(int[] nums, int k) {
+        Deque<Integer> win = new ArrayDeque<>();
+        List<Integer> ans = new ArrayList<>();
+        for (int i = 0; i < nums.length; i++) {
+            while (!win.isEmpty() && nums[i] >= nums[win.getLast()]) {
+                win.pollLast();
+            }
+            if (!win.isEmpty() && i - win.getFirst() + 1 > k) {
+                win.pollFirst();
+            }
+            win.addLast(i);
+            if (i >= k - 1) {
+                ans.add(win.getFirst());
+            }
+        }
+        return ans.stream().mapToInt(t -> nums[t]).toArray();
+    }
+}
+```
