@@ -74,3 +74,22 @@ class Solution {
     }
 }
 ```
+
+### 2022-01-01
+> 新年快乐🎉🎊🎈
+#### [2022. 将一维数组转变成二维数组](https://leetcode-cn.com/problems/convert-1d-array-into-2d-array/)
+```java
+class Solution {
+    public int[][] construct2DArray(int[] original, int m, int n) {
+        int[][] res = new int[m][n];
+        int len = original.length;
+        if (len != m * n) return new int[][]{};
+        for (int i = 0; i < m; i ++) {
+            for (int j = 0; j < n; j ++) {
+                res[i][j] = original[i * n + j];
+            }
+        }
+        return res;
+    }
+}
+```
