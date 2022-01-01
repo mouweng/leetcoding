@@ -61,4 +61,45 @@ public:
     }
 };
 ```
+### 2021-12-31
+#### [507. 完美数](https://leetcode-cn.com/problems/perfect-number/)
 
+```c++
+class Solution {
+public:
+    bool checkPerfectNumber(int num) {
+        int sqrt_of_num=sqrt(num);
+        int sum_of_odd_factors=-num;
+        for(int i=1;i<=sqrt_of_num;i++){
+            if(num%i==0){
+                sum_of_odd_factors+=i;
+                if(pow(i,2)!=num){
+                    sum_of_odd_factors+=(num/i);
+                }
+            }
+        }
+        return num==sum_of_odd_factors;
+    }
+};
+```
+### 2022-1-1
+#### [2022. 将一维数组转变成二维数组](https://leetcode-cn.com/problems/convert-1d-array-into-2d-array/)
+
+```c++
+class Solution {
+public:
+    bool checkPerfectNumber(int num) {
+        int sqrt_of_num=sqrt(num);
+        int sum_of_odd_factors=-num;
+        for(int i=1;i<=sqrt_of_num;i++){
+            if(num%i==0){
+                sum_of_odd_factors+=i;
+                if(pow(i,2)!=num){
+                    sum_of_odd_factors+=(num/i);
+                }
+            }
+        }
+        return num==sum_of_odd_factors;
+    }
+};
+```

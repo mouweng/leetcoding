@@ -28,3 +28,24 @@ class Solution {
     }
 }
 ```
+## 2021.12.31
+[2113. Elements in Array After Removing and Replacing Elements](https://leetcode-cn.com/problems/elements-in-array-after-removing-and-replacing-elements/)
+```java
+class Solution {
+    public int[] elementInNums(int[] nums, int[][] queries) {
+        int n = nums.length;
+        int nn = 2 * n;
+        int[][] m = new int[nn][n];
+        for (int i = 0; i < nn; i++) Arrays.fill(m[i], -1);
+        for (int i  = 0; i < n; i++) for (int j = i; j < n; j++) m[i][j - i] = nums[j];
+        for (int i = n + 1; i < nn; i++)  for (int j = 0; j < i - n; j++) m[i][j] = nums[j];
+        int ansLen = queries.length;
+        int[] ans = new int[ansLen];
+        for (int i = 0; i < ansLen; i++) {
+            int ind = queries[i][0] % nn;
+            ans[i] = m[ind][queries[i][1]];
+        }
+        return ans;
+    }
+}
+```

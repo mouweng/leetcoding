@@ -1,4 +1,7 @@
-# wyf
+# 👨🏻‍💻Mouweng给我冲！
+📟[[LEETCODE主页](https://leetcode-cn.com/profile/)]
+
+- 🔖1月份目标：LEETCODE数量达到350题
 
 ### 2021-12-29
 #### [1995. 统计特殊四元组](https://leetcode-cn.com/problems/count-special-quadruplets/)
@@ -51,6 +54,42 @@ class Solution {
             }
         }
         return true;
+    }
+}
+```
+
+### 2021-12-31
+#### [507. 完美数](https://leetcode-cn.com/problems/perfect-number/)
+```java
+class Solution {
+    public boolean checkPerfectNumber(int num) {
+        if (num <= 4) return false;
+        int cnt = 1;
+        for (int i = 2; i <= num / 2; i ++) {
+            if (num % i == 0) {
+                cnt += i;
+            }
+        }
+        return num == cnt ? true : false;
+    }
+}
+```
+
+### 2022-01-01
+> 新年快乐🎉🎊🎈
+#### [2022. 将一维数组转变成二维数组](https://leetcode-cn.com/problems/convert-1d-array-into-2d-array/)
+```java
+class Solution {
+    public int[][] construct2DArray(int[] original, int m, int n) {
+        int[][] res = new int[m][n];
+        int len = original.length;
+        if (len != m * n) return new int[][]{};
+        for (int i = 0; i < m; i ++) {
+            for (int j = 0; j < n; j ++) {
+                res[i][j] = original[i * n + j];
+            }
+        }
+        return res;
     }
 }
 ```
