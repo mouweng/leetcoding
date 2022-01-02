@@ -72,3 +72,25 @@ class Solution {
     }
 }
 ```
+## 2022.1.2
+[390. 消除游戏](https://leetcode-cn.com/problems/elimination-game/)
+```java
+class Solution {
+    public int lastRemaining(int n) {
+        int step = 1;
+        int first = 1;
+        boolean flag = true;
+        while (n > 1) {
+            if (flag) {
+                first += step;
+            } else {
+                first = first + (n % 2 == 0 ? 0 : step);
+            }
+            step *= 2;
+            flag = !flag;
+            n = n / 2;
+        }
+        return first;
+    }
+}
+```
