@@ -105,3 +105,44 @@ class Solution {
 }
 ```
 
+### 2022-1-2
+
+#### [390. 消除游戏](https://leetcode-cn.com/problems/elimination-game/)
+
+```java
+class Solution {
+    public int lastRemaining(int n) {
+        // an实际用不上，但是为了等差数列的代码可读性还是加了
+        int a1=1,an=n;
+        int cnt=n,step=1;
+        boolean falg = true;
+        while(cnt>1){
+            // 从左往右
+            if(falg){
+                if(cnt%2==0){
+                    a1 = a1+step;
+                    an = an;
+                }else{
+                    a1 = a1+step;
+                    an = an-step;
+                }
+            }
+            // 从右往左
+            else{
+                if(cnt%2==0){
+                    a1 = a1;
+                    an = an-step;
+                }else{
+                    a1 = a1+step;
+                    an = an-step;
+                }
+            }
+            cnt/=2;
+            step*=2;
+            falg=!falg;
+        }
+        return a1;
+    }
+}
+```
+
