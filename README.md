@@ -5,3 +5,4 @@
 - **2021-12-31** | [507. 完美数](https://leetcode-cn.com/problems/perfect-number/)
 - **2022-01-01** | [2022. 将一维数组转变成二维数组](https://leetcode-cn.com/problems/convert-1d-array-into-2d-array/)
 - **2022-01-02** | [390. 消除游戏](https://leetcode-cn.com/problems/elimination-game/)
+- **2022-01-03** | [1185. 一周中的第几天](https://leetcode-cn.com/problems/day-of-the-week/)
