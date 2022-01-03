@@ -93,3 +93,28 @@ class Solution {
     }
 }
 ```
+
+### 2022-01-03
+#### [1185. 一周中的第几天](https://leetcode-cn.com/problems/day-of-the-week/)
+- 1970年1月1号是星期四
+- 闰年的定义是：年份不是100的整数且是4的整数，或者年份是400的整数
+```java
+class Solution {
+    public String dayOfTheWeek(int day, int month, int year) {
+        String[] WeekDay = {"Monday", "Tuesday", "Wednesday", "Thursday","Friday", "Saturday", "Sunday"};
+        int[] Monthday = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+        // 计算过去的年有多少天
+        int days = 365 * (year - 1971) + (year - 1969) / 4;
+        // 计算过去的月有多少天
+        for (int i = 0; i < month - 1; i ++) {
+            days += Monthday[i];
+        }
+        // 计算今年是否事闰年
+        if (month >= 3 && (year % 400 == 0 || (year % 4 == 0 && year % 100 != 0))) {
+            days ++;
+        }
+        days += day;
+        return WeekDay[(days + 3) % 7];
+    }
+}
+```
