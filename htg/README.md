@@ -59,3 +59,19 @@ var checkPerfectNumber = function(num) {
   else return false
 };
 ```
+
+### 1185
+
+```javascript
+/**
+ * @param {number} day
+ * @param {number} month
+ * @param {number} year
+ * @return {string}
+ */
+const dayOfTheWeek = (day, month, year) => 
+  (new Intl.DateTimeFormat('en-US', {
+    weekday: 'long'
+  })
+  .format(new Date(year, month-1, day)))
+```
