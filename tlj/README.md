@@ -146,3 +146,23 @@ class Solution {
 }
 ```
 
+### 2022-1-3
+
+#### [1185. 一周中的第几天](https://leetcode-cn.com/problems/day-of-the-week/)
+
+```java
+import java.util.Calendar;
+
+class Solution {
+    public String dayOfTheWeek(int day, int month, int year) {
+        String[] weekdays = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
+        Calendar calendar = Calendar.getInstance();
+        // 由于月份下标从0开始赋值所以月份要-1
+        calendar.set(year, month - 1, day);
+        // Calendar.DAY_OF_WEEK返回从Sunday开始的1-7
+        int week_index = calendar.get(Calendar.DAY_OF_WEEK) - 1;
+        return weekdays[week_index];
+    }
+}
+```
+
