@@ -118,3 +118,19 @@ class Solution {
     }
 }
 ```
+
+### 2022-01-04
+#### [206. 反转链表](https://leetcode-cn.com/problems/reverse-linked-list/)
+- 递归解法
+```java
+class Solution {
+    public ListNode reverseList(ListNode head) {
+        if (head == null || head.next == null) return head;
+        ListNode p = head.next;
+        ListNode q = reverseList(p);
+        head.next = null;
+        p.next = head;
+        return q;
+    }
+}
+```
