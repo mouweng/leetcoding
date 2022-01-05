@@ -75,3 +75,112 @@ const dayOfTheWeek = (day, month, year) =>
   })
   .format(new Date(year, month-1, day)))
 ```
+
+## 2021-01-05
+
+### 1576
+
+
+```javascript
+/**
+ * @param {string} s
+ * @return {string}
+ */
+
+var modifyString = function(s) {
+    let str = s.split("")
+    
+    for(let i=0; i<str.length; i++){
+        let alphabet =  ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+        if(str[i] === "?"){
+           str[i-1] ?
+              alphabet = alphabet.filter(word => word !== str[i-1]) 
+          :
+           str[i+1] ?
+              alphabet = alphabet.filter(word => word !== str[i+1]) 
+          :
+          str[i] = alphabet[0]
+        }
+    }
+    return str.join("")
+};
+```
+
+### 146
+
+提交了几次过了lmao
+
+```javascript
+/**
+ * @param {number} capacity
+ */
+
+// doubly linkedlist and hashmap? 
+var LRUCache = function(capacity) {
+    this.capacity = capacity
+    this.map = new Map()
+    
+    this.head = {}
+    this.tail = {}
+    
+    this.head.next = this.tail
+    this.tail.prev = this.head
+};
+
+/** 
+ * @param {number} key
+ * @return {number}
+ */
+LRUCache.prototype.get = function(key) {
+   if(this.map.has(key)){
+       // 4 ptrs to change
+       let node = this.map.get(key)
+       node.prev.next = node.next
+       node.next.prev = node.prev
+       
+       this.tail.prev.next = node
+       node.next = this.tail
+       node.prev = this.tail.prev
+       this.tail.prev = node
+       
+       return node.value
+   } else {
+       return -1
+   }
+};
+
+/** 
+ * @param {number} key 
+ * @param {number} value
+ * @return {void}
+ */
+LRUCache.prototype.put = function(key, value) {
+    // exist
+    if(this.get(key) !== -1){
+        this.tail.prev.value = value
+    } else {
+        if(this.map.size === this.capacity){
+            this.map.delete(this.head.next.key)
+            this.head.next = this.head.next.next
+            this.head.next.prev = this.head
+        }
+        
+        const newNode = {
+            key, value
+        }
+        
+        this.map.set(key, newNode)
+        this.tail.prev.next = newNode
+        newNode.prev = this.tail.prev
+        newNode.next = this.tail
+        this.tail.prev = newNode  
+    }
+};
+
+/** 
+ * Your LRUCache object will be instantiated and called as such:
+ * var obj = new LRUCache(capacity)
+ * var param_1 = obj.get(key)
+ * obj.put(key,value)
+ */
+ ```
