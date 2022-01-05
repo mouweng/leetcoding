@@ -134,3 +134,104 @@ class Solution {
     }
 }
 ```
+
+### 2022-01-05
+#### [1576. 替换所有的问号](https://leetcode-cn.com/problems/replace-all-s-to-avoid-consecutive-repeating-characters/)
+```java
+class Solution {
+    public String modifyString(String s) {
+        s = "#" + s + "#";
+        StringBuilder res = new StringBuilder();
+        for (int i = 0; i < s.length(); i ++) {
+            if (s.charAt(i) == '?') {
+                // 替换, 从a到c中选一个
+                for (int j = 0; j < 3; j ++) {
+                    char c = (char)('a' + j);
+                    if (c != res.charAt(res.length() - 1) && c != s.charAt(i + 1)){
+                        res.append(c);
+                        break;
+                    }
+                }
+            } else {
+                res.append(s.charAt(i));
+            }
+        }
+        return res.substring(1, res.length() - 1);
+    }
+}
+```
+
+#### [146. LRU 缓存](https://leetcode-cn.com/problems/lru-cache/)
+```java
+class LRUCache {
+    
+    class ListNode {
+        int key,value;
+        ListNode prev, next;
+        ListNode(int k, int v) {
+            this.key = k;
+            this.value = v;
+        }
+    }
+
+    ListNode head, tail;
+    Map<Integer, ListNode> m;
+    int size, cap;
+
+    public LRUCache(int capacity) {
+        cap = capacity;
+        size = 0;
+        head = new ListNode(-1, -1);
+        tail = new ListNode(-1, -1);
+        head.next = tail;
+        tail.prev = head;
+        m = new HashMap<Integer, ListNode>();
+    }
+    
+    public int get(int key) {
+        if (!m.containsKey(key)) return -1;
+        else {
+            // 删除 
+            ListNode n = m.get(key);
+            delNode(n);
+            addHead(n);
+            return n.value;
+        }
+    }
+    
+    public void put(int key, int value) {
+        // key是否存在
+        if (!m.containsKey(key)) {
+            // 插入到头部
+            ListNode nn = new ListNode(key, value);
+            addHead(nn);
+            m.put(key, nn);
+            if (size == cap) {
+                // 删除尾部
+                m.remove(tail.prev.key);
+                delNode(tail.prev);
+            } else {
+                size ++;
+            }
+        } else {
+            ListNode n = m.get(key);
+            n.value = value;
+            delNode(n);
+            addHead(n);
+        }
+    }
+
+    public void addHead(ListNode node) {
+        node.next = head.next;
+        head.next.prev = node;
+        head.next = node;
+        node.prev = head;
+    }
+    public void delNode(ListNode node) {
+        ListNode next = node.next;
+        ListNode prev = node.prev;
+        prev.next = next;
+        next.prev = prev;
+    }
+}
+```
