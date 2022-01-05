@@ -239,3 +239,31 @@ class LRUCache {
  * obj.put(key,value);
  */
 ```
+[面试题 10.03. 搜索旋转数组](https://leetcode-cn.com/problems/search-rotate-array-lcci/)
+(面向测试用例编程)
+```java
+class Solution {
+    public int search(int[] arr, int target) {
+        int n = arr.length;
+        int left = 0, right = n- 1;
+        while (left <= right) {
+            int mid = (left + right) / 2;
+            if (arr[left] == target) return left;
+            else if (arr[mid] > arr[left]) {
+                if (target > arr[mid]) left = mid + 1;
+                else if (target <= arr[mid]) right = mid;
+            } else if (arr[mid] < arr[left]) {
+                if (target > arr[right]) right = mid - 1;
+                else if (target < arr[right]) {
+                    if (target >= arr[mid]) left = mid;
+                    else if (target < arr[mid]) right = mid - 1;
+                }
+                else left++;
+            } else {
+                left++;
+            }
+        }
+        return -1;
+    }
+}
+```
