@@ -162,6 +162,7 @@ class Solution {
 ```
 
 #### [146. LRU 缓存](https://leetcode-cn.com/problems/lru-cache/)
+- 哈希+双向链表实现
 ```java
 class LRUCache {
     
