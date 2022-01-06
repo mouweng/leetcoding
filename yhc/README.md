@@ -94,3 +94,210 @@ class Solution {
     }
 }
 ```
+## 2022.1.3-2022.1.4
+**唯唯诺诺2天啦，啥也不会。。。**
+## 2022.1.5
+[1576. 替换所有的问号](https://leetcode-cn.com/problems/replace-all-s-to-avoid-consecutive-repeating-characters/)
+```java
+class Solution {
+    public String modifyString(String s) {
+        StringBuilder sb = new StringBuilder(s);
+        for (int i = 0; i < sb.length(); i++) {
+            if (sb.charAt(i) != '?') continue;
+            char left = '0', right = '0';
+            if (i - 1 >= 0) {
+                left = sb.charAt(i - 1);
+            } 
+            if (i + 1 < sb.length()) {
+                right = sb.charAt(i + 1);
+            }
+            for (int j = 0; j < 26; j++) {
+                char newVal = (char)(j + 'a');
+                if (newVal != left && newVal != right) {
+                    sb.setCharAt(i, newVal);
+                    break;
+                }
+            }
+        }
+        return sb.toString();
+    }
+}
+```
+[146. LRU 缓存](https://leetcode-cn.com/problems/lru-cache/)
+```java
+class LRUCache {
+    class Node {
+        Node pre, next;
+        int key;
+        int val;
+        Node(int key, int val) {
+            this.key = key;
+            this.val = val;
+        }
+    }
+    int size = 0;
+    int capacity = 0;
+    Node head, tail;
+    Map<Integer, Node> mp = new HashMap<>();
+    
+    public LRUCache(int capacity) {
+        this.size = 0;
+        this.capacity = capacity;
+    }
+
+    private void addNode(Node p) {
+        if (tail == null) {
+            head = p;
+            tail = p;
+        } else {
+            p.pre = tail;
+            tail.next = p;
+            tail = p;
+        }
+    }
+
+    private void removeHead() {
+        if (head == null) return;
+        Node next = head.next;
+        if (next == null) {
+            head = null;
+            tail = null;
+        } else {
+            head.next = null;
+            next.pre = null;
+            head = next;
+        }
+    }
+
+    private void removeTail() {
+        if (tail == null) return;
+        Node pre = tail.pre;
+        if (pre == null) {
+            head = null;
+            tail = null;
+        } else {
+            pre.next = null;
+            tail.pre = null;
+            tail = pre;
+        }
+    }
+
+    private void removeNode(Node p) {
+        if (p == head) {
+            removeHead();
+        } else if (p == tail) {
+            removeTail();
+        } else {
+            p.pre.next = p.next;
+            if (p.next != null) {
+                p.next.pre = p.pre;
+            }
+            p.pre = null;
+            p.next = null;
+        }
+    }
+
+    private void moveToTail(Node p) {
+        removeNode(p);
+        addNode(p);
+    }
+    
+    public int get(int key) {
+        if (!mp.containsKey(key)) return -1;
+        Node p = mp.get(key);
+        moveToTail(p);
+        return p.val;
+    }
+    
+    public void put(int key, int value) {
+        if (mp.containsKey(key)) {
+            get(key);
+            Node p = mp.get(key);
+            p.val = value;
+            return;
+        }
+        Node p = new Node(key, value);
+        if (size < capacity) {
+            addNode(p);
+            size++;
+        } else {
+            if (head == null) return;
+            if (head != null) {
+                mp.remove(head.key);
+            }
+            removeHead();
+            addNode(p);
+        }
+        mp.put(key, p);
+    }
+}
+
+/**
+ * Your LRUCache object will be instantiated and called as such:
+ * LRUCache obj = new LRUCache(capacity);
+ * int param_1 = obj.get(key);
+ * obj.put(key,value);
+ */
+```
+[面试题 10.03. 搜索旋转数组](https://leetcode-cn.com/problems/search-rotate-array-lcci/)
+(面向测试用例编程)
+```java
+class Solution {
+    public int search(int[] arr, int target) {
+        int n = arr.length;
+        int left = 0, right = n- 1;
+        while (left <= right) {
+            int mid = (left + right) / 2;
+            if (arr[left] == target) return left;
+            else if (arr[mid] > arr[left]) {
+                if (target > arr[mid]) left = mid + 1;
+                else if (target <= arr[mid]) right = mid;
+            } else if (arr[mid] < arr[left]) {
+                if (target > arr[right]) right = mid - 1;
+                else if (target < arr[right]) {
+                    if (target >= arr[mid]) left = mid;
+                    else if (target < arr[mid]) right = mid - 1;
+                }
+                else left++;
+            } else {
+                left++;
+            }
+        }
+        return -1;
+    }
+}
+```
+[71. 简化路径](https://leetcode-cn.com/problems/simplify-path/)
+```java
+class Solution {
+    public String simplifyPath(String path) {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < path.length(); i++) {
+            char c = path.charAt(i);
+            if (c != '/' || i == 0) {
+                sb.append(c);
+            } else if (i != path.length() - 1 && sb.charAt(sb.length() - 1) != '/') {
+                sb.append(c);
+            }
+        }
+        Deque<String> dq = new ArrayDeque<>();
+        String[] fs = sb.toString().split("/");
+        for (String f : fs) {
+            if (!f.equals("") && !f.equals(".")) {
+                if (f.equals("..")) {
+                    if (!dq.isEmpty()) dq.removeLast();
+                } else {
+                    dq.add(f);
+                }
+            } 
+        }
+        StringBuilder ans = new StringBuilder("");
+        while (!dq.isEmpty()) {
+            String s = dq.pollFirst();
+            ans.append("/");
+            ans.append(s);
+        }
+        return ans.length() == 0 ? "/" : ans.toString();
+    }
+}
+```
