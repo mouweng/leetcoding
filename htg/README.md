@@ -217,6 +217,8 @@ var simplifyPath = function(path) {
 
 sliding window pattern
 
+> in this case, we can use a fixed-size array (arr[25])
+
  ```javascript
  /**
  * @param {string} s
