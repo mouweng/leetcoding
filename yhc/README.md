@@ -267,3 +267,37 @@ class Solution {
     }
 }
 ```
+[71. 简化路径](https://leetcode-cn.com/problems/simplify-path/)
+```java
+class Solution {
+    public String simplifyPath(String path) {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < path.length(); i++) {
+            char c = path.charAt(i);
+            if (c != '/' || i == 0) {
+                sb.append(c);
+            } else if (i != path.length() - 1 && sb.charAt(sb.length() - 1) != '/') {
+                sb.append(c);
+            }
+        }
+        Deque<String> dq = new ArrayDeque<>();
+        String[] fs = sb.toString().split("/");
+        for (String f : fs) {
+            if (!f.equals("") && !f.equals(".")) {
+                if (f.equals("..")) {
+                    if (!dq.isEmpty()) dq.removeLast();
+                } else {
+                    dq.add(f);
+                }
+            } 
+        }
+        StringBuilder ans = new StringBuilder("");
+        while (!dq.isEmpty()) {
+            String s = dq.pollFirst();
+            ans.append("/");
+            ans.append(s);
+        }
+        return ans.length() == 0 ? "/" : ans.toString();
+    }
+}
+```
