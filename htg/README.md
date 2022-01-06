@@ -76,7 +76,7 @@ const dayOfTheWeek = (day, month, year) =>
   .format(new Date(year, month-1, day)))
 ```
 
-## 2021-01-05
+## 2022-01-05
 
 ### 1576
 
@@ -183,4 +183,32 @@ LRUCache.prototype.put = function(key, value) {
  * var param_1 = obj.get(key)
  * obj.put(key,value)
  */
+ ```
+
+ ## 2022-01-06
+
+ ### 71 
+
+ using a stack
+
+ ```javascript
+ /**
+ * @param {string} path
+ * @return {string}
+ */
+var simplifyPath = function(path) {
+    const canonicalPath = path.split('/')
+    let stack = []
+    for(let i=0; i<canonicalPath.length; i++) {
+      if(canonicalPath[i] === '.' || canonicalPath[i] === ""){
+        // same level, do nothing
+      } else if(canonicalPath[i] === '..'){
+        // level up
+        if(stack.length !== 0) stack.pop()
+      } else {
+        stack.push(canonicalPath[i])
+      }
+    }
+  return "/" + stack.join('/')
+};
  ```
