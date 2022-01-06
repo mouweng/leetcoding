@@ -212,3 +212,33 @@ var simplifyPath = function(path) {
   return "/" + stack.join('/')
 };
  ```
+
+ ### 3
+
+sliding window pattern
+
+ ```javascript
+ /**
+ * @param {string} s
+ * @return {number}
+ */
+var lengthOfLongestSubstring = function(s) {
+  // sliding window pattern
+  let windowStart = 0,
+      maxLength = 0,
+      existed = {}
+  
+  for(let windowEnd=0; windowEnd < s.length; windowEnd++){
+    const cur = s[windowEnd]
+    if(cur in existed){
+      // exists in existed object
+      windowStart = Math.max(windowStart, existed[cur] + 1) 
+    } 
+    // push 
+    existed[cur] = windowEnd
+    maxLength = Math.max(maxLength, windowEnd - windowStart + 1) 
+  }
+  
+  return maxLength
+};
+ ```
