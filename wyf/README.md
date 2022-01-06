@@ -236,3 +236,48 @@ class LRUCache {
     }
 }
 ```
+
+### 2022-01-06
+#### [71. 简化路径](https://leetcode-cn.com/problems/simplify-path/)
+```java
+class Solution {
+    public String simplifyPath(String path) {
+        String[] strs = path.split("/");
+        List<String> res = new ArrayList<>();
+        for (String s : strs) {
+            if (s.equals("") || s.equals(".")) continue;
+            else if (s.equals("..")) {
+                if (!res.isEmpty()) res.remove(res.size() - 1);
+            }
+            else res.add(s);
+        }
+        if (res.size() == 0) return "/";
+        StringBuilder sb = new StringBuilder();
+        for (String s : res) {
+            sb.append("/");
+            sb.append(s);
+        }
+        return sb.toString();
+    }
+}
+```
+
+#### [3. 无重复字符的最长子串](https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/)
+```java
+class Solution {
+    public int lengthOfLongestSubstring(String s) {
+        // 滑动窗口实现
+        Map<Character, Integer> m = new HashMap<>();
+        int i = 0, res = 0;
+        for (int j = 0; j < s.length(); j ++) {
+            char c = s.charAt(j);
+            if (m.containsKey(c) && m.get(c) >= i) {
+                i = m.get(c) + 1;
+            }
+            m.put(c, j);
+            res = Math.max(res, j - i + 1);
+        }
+        return res;
+    }
+}
+```
