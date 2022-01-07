@@ -76,7 +76,7 @@ const dayOfTheWeek = (day, month, year) =>
   .format(new Date(year, month-1, day)))
 ```
 
-## 2021-01-05
+## 2022-01-05
 
 ### 1576
 
@@ -184,3 +184,137 @@ LRUCache.prototype.put = function(key, value) {
  * obj.put(key,value)
  */
  ```
+
+ ## 2022-01-06
+
+ ### 71 
+
+ using a stack
+
+ ```javascript
+ /**
+ * @param {string} path
+ * @return {string}
+ */
+var simplifyPath = function(path) {
+    const canonicalPath = path.split('/')
+    let stack = []
+    for(let i=0; i<canonicalPath.length; i++) {
+      if(canonicalPath[i] === '.' || canonicalPath[i] === ""){
+        // same level, do nothing
+      } else if(canonicalPath[i] === '..'){
+        // level up
+        if(stack.length !== 0) stack.pop()
+      } else {
+        stack.push(canonicalPath[i])
+      }
+    }
+  return "/" + stack.join('/')
+};
+ ```
+
+ ### 3
+
+sliding window pattern
+
+> in this case, we can use a fixed-size array (arr[25])
+
+ ```javascript
+ /**
+ * @param {string} s
+ * @return {number}
+ */
+var lengthOfLongestSubstring = function(s) {
+  // sliding window pattern
+  let windowStart = 0,
+      maxLength = 0,
+      existed = {}
+  
+  for(let windowEnd=0; windowEnd < s.length; windowEnd++){
+    const cur = s[windowEnd]
+    if(cur in existed){
+      // exists in existed object
+      windowStart = Math.max(windowStart, existed[cur] + 1) 
+    } 
+    // push 
+    existed[cur] = windowEnd
+    maxLength = Math.max(maxLength, windowEnd - windowStart + 1) 
+  }
+  
+  return maxLength
+};
+ ```
+
+Some extends:
+
+### Problem statement
+
+Given a string, find the length of the *longest substring* in it *with no more than `k` distinct characters*.
+Leetcode premium 里的题目...
+
+```javascript
+  const longest_substring_with_k_distinct = (str, k) =>{
+    // 思路应该是类似的 多记录一些内容
+    let windowStart = 0,
+    maxLength = 0,
+    charFreq = {}
+
+    for(let windowEnd=0; windowEnd < str.length; windowEnd++){
+      const rightChar = str[windowEnd]
+      (rightChar in charFreq) ? charFreq[rightChar]++ : charFreq[rightChar] = 1
+
+      // shrink the window, until we are left with k distinct chars in charFreq
+      while(Object.keys(charFreq).length > k){
+        const leftChar = str[windowStart]
+        charFreq[leftChar] -= 1
+        if(charFreq[leftChar] === 0){
+          delete charFreq[leftChar]
+        }
+        windowStart += 1
+      }
+
+      maxLength = Math.max(maxLength, windowEnd - windowStart + 1)
+     }
+    return maxLength
+  }
+```
+
+
+## 2022-01-07
+
+### 1614
+
+搞半天自己就是VPS...
+
+```javascript
+/**
+ * @param {string} s
+ * @return {number}
+ */
+var maxDepth = function(s) {  
+  let stack =[],
+      depth = 0
+  for(let i=0; i<s.length; i++){
+    if(s[i] === "("){
+      stack.push(s[i])
+      if(stack.length > depth) depth = stack.length
+    } else if(s[i] === ")"){
+      stack.pop()
+    }
+  }
+  return depth
+};
+```
+
+### 215
+
+where the f**k am I?
+
+```javascript
+/**
+ * @param {number[]} nums
+ * @param {number} k
+ * @return {number}
+ */
+const findKthLargest = (nums, k) => nums.sort((a,b) => b - a)[k-1]
+```

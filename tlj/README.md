@@ -166,3 +166,25 @@ class Solution {
 }
 ```
 
+## 2022-1-7
+
+#### [1614. 括号的最大嵌套深度](https://leetcode-cn.com/problems/maximum-nesting-depth-of-the-parentheses/)
+
+```java
+class Solution {
+    public int maxDepth(String s) {
+        int ans = 0;
+        LinkedList<Character> stack = new LinkedList<>();
+        for(char c:s.toCharArray()){
+            if(c=='('){
+                stack.offer(c);
+                ans = Math.max(ans,stack.size());
+            }else if(c==')'){
+                stack.pollLast();
+            }
+        }
+        return ans;
+    }
+}
+```
+

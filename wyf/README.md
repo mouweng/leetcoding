@@ -236,3 +236,107 @@ class LRUCache {
     }
 }
 ```
+
+### 2022-01-06
+#### [71. 简化路径](https://leetcode-cn.com/problems/simplify-path/)
+```java
+class Solution {
+    public String simplifyPath(String path) {
+        String[] strs = path.split("/");
+        List<String> res = new ArrayList<>();
+        for (String s : strs) {
+            if (s.equals("") || s.equals(".")) continue;
+            else if (s.equals("..")) {
+                if (!res.isEmpty()) res.remove(res.size() - 1);
+            }
+            else res.add(s);
+        }
+        if (res.size() == 0) return "/";
+        StringBuilder sb = new StringBuilder();
+        for (String s : res) {
+            sb.append("/");
+            sb.append(s);
+        }
+        return sb.toString();
+    }
+}
+```
+
+#### [3. 无重复字符的最长子串](https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/)
+```java
+class Solution {
+    public int lengthOfLongestSubstring(String s) {
+        // 滑动窗口实现
+        Map<Character, Integer> m = new HashMap<>();
+        int i = 0, res = 0;
+        for (int j = 0; j < s.length(); j ++) {
+            char c = s.charAt(j);
+            if (m.containsKey(c) && m.get(c) >= i) {
+                i = m.get(c) + 1;
+            }
+            m.put(c, j);
+            res = Math.max(res, j - i + 1);
+        }
+        return res;
+    }
+}
+```
+
+### 2022-01-07
+#### [1614. 括号的最大嵌套深度](https://leetcode-cn.com/problems/maximum-nesting-depth-of-the-parentheses/) 
+```java
+class Solution {
+    public int maxDepth(String s) {
+        int depth = 0, res = 0;
+        for (int i = 0; i < s.length(); i ++) {
+            if (s.charAt(i) == '(') {
+                depth ++;
+                res = Math.max(res, depth);
+            }
+            else if (s.charAt(i) == ')') depth --;
+            else continue;
+        }
+        return res;
+    }
+}
+```
+#### [215. 数组中的第K个最大元素](https://leetcode-cn.com/problems/kth-largest-element-in-an-array/)
+
+- 优先队列
+```java
+class Solution {
+    public int findKthLargest(int[] nums, int k) {
+        PriorityQueue<Integer> pq = new PriorityQueue<Integer>((a, b)->{return a - b;});
+        for (int i : nums) {
+            pq.offer(i);
+            if (pq.size() > k) pq.poll();
+        }
+        return pq.poll();
+    }
+}
+```
+
+- 快速/归并排序
+```java
+class Solution {
+    void quickSort(int[] nums, int l, int r) {
+        if (l >= r) return;
+
+        int q = nums[l], i = l, j = r;
+        while (i < j) {
+            while (i < j && nums[j] >= q) j --;
+            nums[i] = nums[j];
+            while (i < j && nums[i] <= q) i ++;
+            nums[j] = nums[i];
+        }
+        nums[i] = q;
+        quickSort(nums, l, i - 1);
+        quickSort(nums, i + 1, r); 
+    }
+
+    public int findKthLargest(int[] nums, int k) {
+        quickSort(nums, 0, nums.length - 1);
+        return nums[nums.length - k];
+    }
+}
+```
