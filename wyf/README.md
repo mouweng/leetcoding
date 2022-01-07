@@ -281,3 +281,62 @@ class Solution {
     }
 }
 ```
+
+### 2022-01-07
+#### [1614. 括号的最大嵌套深度](https://leetcode-cn.com/problems/maximum-nesting-depth-of-the-parentheses/) 
+```java
+class Solution {
+    public int maxDepth(String s) {
+        int depth = 0, res = 0;
+        for (int i = 0; i < s.length(); i ++) {
+            if (s.charAt(i) == '(') {
+                depth ++;
+                res = Math.max(res, depth);
+            }
+            else if (s.charAt(i) == ')') depth --;
+            else continue;
+        }
+        return res;
+    }
+}
+```
+#### [215. 数组中的第K个最大元素](https://leetcode-cn.com/problems/kth-largest-element-in-an-array/)
+
+- 优先队列
+```java
+class Solution {
+    public int findKthLargest(int[] nums, int k) {
+        PriorityQueue<Integer> pq = new PriorityQueue<Integer>((a, b)->{return a - b;});
+        for (int i : nums) {
+            pq.offer(i);
+            if (pq.size() > k) pq.poll();
+        }
+        return pq.poll();
+    }
+}
+```
+
+- 快速/归并排序
+```java
+class Solution {
+    void quickSort(int[] nums, int l, int r) {
+        if (l >= r) return;
+
+        int q = nums[l], i = l, j = r;
+        while (i < j) {
+            while (i < j && nums[j] >= q) j --;
+            nums[i] = nums[j];
+            while (i < j && nums[i] <= q) i ++;
+            nums[j] = nums[i];
+        }
+        nums[i] = q;
+        quickSort(nums, l, i - 1);
+        quickSort(nums, i + 1, r); 
+    }
+
+    public int findKthLargest(int[] nums, int k) {
+        quickSort(nums, 0, nums.length - 1);
+        return nums[nums.length - k];
+    }
+}
+```
