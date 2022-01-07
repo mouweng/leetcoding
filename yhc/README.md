@@ -239,7 +239,7 @@ class LRUCache {
  * obj.put(key,value);
  */
 ```
-[面试题 10.03. 搜索旋转数组](https://leetcode-cn.com/problems/search-rotate-array-lcci/)
+[面试题 10.03. 搜索旋转数组](https://leetcode-cn.com/problems/search-rotate-array-lcci/)  
 (面向测试用例编程)
 ```java
 class Solution {
@@ -298,6 +298,25 @@ class Solution {
             ans.append(s);
         }
         return ans.length() == 0 ? "/" : ans.toString();
+    }
+}
+```
+## 2022.1.7
+[1614. 括号的最大嵌套深度](https://leetcode-cn.com/problems/maximum-nesting-depth-of-the-parentheses/)
+```java
+class Solution {
+    public int maxDepth(String s) {
+        Stack<Character> st = new Stack<>();
+        int ans = 0;
+        for (char c : s.toCharArray()) {
+            if (c == '(') {
+                st.push(c);
+                ans = Math.max(ans, st.size());
+            } else if (c == ')') {
+                st.pop();
+            }
+        }
+        return ans;
     }
 }
 ```
