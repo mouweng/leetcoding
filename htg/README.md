@@ -244,3 +244,37 @@ var lengthOfLongestSubstring = function(s) {
   return maxLength
 };
  ```
+
+Some extends:
+
+### Problem statement
+
+Given a string, find the length of the *longest substring* in it *with no more than `k` distinct characters*.
+Leetcode premium 里的题目...
+
+```javascript
+  const longest_substring_with_k_distinct = (str, k) =>{
+    // 思路应该是类似的 多记录一些内容
+    let windowStart = 0,
+    maxLength = 0,
+    charFreq = {}
+
+    for(let windowEnd=0; windowEnd < str.length; windowEnd++){
+      const rightChar = str[windowEnd]
+      (rightChar in charFreq) ? charFreq[rightChar]++ : charFreq[rightChar] = 1
+
+      // shrink the window, until we are left with k distinct chars in charFreq
+      while(Object.keys(charFreq).length > k){
+        const leftChar = str[windowStart]
+        charFreq[leftChar] -= 1
+        if(charFreq[leftChar] === 0){
+          delete charFreq[leftChar]
+        }
+        windowStart += 1
+      }
+
+      maxLength = Math.max(maxLength, windowEnd - windowStart + 1)
+     }
+    return maxLength
+  }
+```
