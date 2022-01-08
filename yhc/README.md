@@ -320,3 +320,25 @@ class Solution {
     }
 }
 ```
+[89. 格雷编码](https://leetcode-cn.com/problems/gray-code/)
+```java
+class Solution {
+    List<Integer> ans = new ArrayList<>();
+    int n;
+    private void dfs(int p) {
+        ans.add(p);
+        int maxi = 0;
+        while ((p >> maxi) > 0) {
+            maxi++;
+        }
+        for (int i = maxi; i < n; i++) {
+            dfs(p + (1 << i));
+        }
+    }
+    public List<Integer> grayCode(int n) {
+        this.n = n;
+        dfs(0);
+        return ans;
+    }
+}
+```
