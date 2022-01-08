@@ -166,3 +166,23 @@ public:
     
 };
 ```
+
+
+
+## 2022-1-8
+#### [89. 格雷编码](https://leetcode-cn.com/problems/gray-code/) 
+```c++
+class Solution {
+public:
+    vector<int> grayCode(int n) {
+        if(n==1){
+            return {0,1};
+        }
+        vector<int> ans=grayCode(n-1);
+        for(int i=0;i<(1<<n-1);i++){
+            ans.push_back(ans[(1<<n-1)-i-1]|(1<<(n-1)));
+        }
+        return ans;
+    }
+};
+```
