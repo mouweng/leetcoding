@@ -29,7 +29,7 @@ public:
 
 #### [846. 一手顺子](https://leetcode-cn.com/problems/hand-of-straights/)
 
-```cpp
+```c++
 class Solution {
 public:
     bool isNStraightHand(vector<int>& hand, int groupSize) {
@@ -100,6 +100,89 @@ public:
             }
         }
         return num==sum_of_odd_factors;
+    }
+};
+```
+
+## 2022-1-7
+
+#### [1614. 括号的最大嵌套深度](https://leetcode-cn.com/problems/maximum-nesting-depth-of-the-parentheses/)
+
+```c++
+class Solution {
+public:
+    int maxDepth(string s) {
+        int lNum=0;
+        int maxDepth=0;
+        for(char c:s){
+            switch(c){
+                case '(':lNum++;maxDepth=max(maxDepth,lNum); break;
+                case ')': lNum--;break;
+            }
+        }
+        return maxDepth;
+    }
+};
+```
+
+#### [215. 数组中的第K个最大元素](https://leetcode-cn.com/problems/kth-largest-element-in-an-array/)
+```c++
+class Solution {
+public:
+    int findKthLargest(vector<int>& nums, int k) {
+        int index= quick_part(nums,0,nums.size(),nums.size()-k);
+        return nums[index];
+    }
+
+    int quick_part(vector<int>& nums, int start,int end,int k){
+        int part_result=part(nums,start,end);
+        if(part_result==k){
+            return k;
+        }
+        else if(part_result<k){
+            return quick_part(nums,part_result+1,end,k);
+        }
+        else {
+            return quick_part(nums,start,part_result,k);
+        }
+    }
+
+ int part(vector<int>& nums, int start,int end){
+        int target_value=nums[end-1];
+        int left=start;
+        int right=end-2;
+        while(left<=right){
+            if(nums[left]<target_value){
+                left++;
+            }
+            else{
+                swap(nums[left],nums[right]);
+                right--;
+            }
+        }
+        swap(nums[left], nums[end - 1]);
+        return left;
+    }
+    
+};
+```
+
+
+
+## 2022-1-8
+#### [89. 格雷编码](https://leetcode-cn.com/problems/gray-code/) 
+```c++
+class Solution {
+public:
+    vector<int> grayCode(int n) {
+        if(n==1){
+            return {0,1};
+        }
+        vector<int> ans=grayCode(n-1);
+        for(int i=0;i<(1<<n-1);i++){
+            ans.push_back(ans[(1<<n-1)-i-1]|(1<<(n-1)));
+        }
+        return ans;
     }
 };
 ```

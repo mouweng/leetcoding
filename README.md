@@ -9,3 +9,5 @@
 - **2022-01-04** | [913. 猫和老鼠](https://leetcode-cn.com/problems/cat-and-mouse/) [206. 反转链表](https://leetcode-cn.com/problems/reverse-linked-list/)
 - **2022-01-05** | [1576. 替换所有的问号](https://leetcode-cn.com/problems/replace-all-s-to-avoid-consecutive-repeating-characters/) [146. LRU 缓存](https://leetcode-cn.com/problems/lru-cache/)
 - **2022-01-06** ｜ [71. 简化路径](https://leetcode-cn.com/problems/simplify-path/) [3. 无重复字符的最长子串](https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/)
+- **2022-01-07** | [1614. 括号的最大嵌套深度](https://leetcode-cn.com/problems/maximum-nesting-depth-of-the-parentheses/) [215. 数组中的第K个最大元素](https://leetcode-cn.com/problems/kth-largest-element-in-an-array/)
+- **2021-01-08** ｜ [89. 格雷编码](https://leetcode-cn.com/problems/gray-code/) [25. K 个一组翻转链表](https://leetcode-cn.com/problems/reverse-nodes-in-k-group/)

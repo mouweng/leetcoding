@@ -278,3 +278,43 @@ Leetcode premium 里的题目...
     return maxLength
   }
 ```
+
+
+## 2022-01-07
+
+### 1614
+
+搞半天自己就是VPS...
+
+```javascript
+/**
+ * @param {string} s
+ * @return {number}
+ */
+var maxDepth = function(s) {  
+  let stack =[],
+      depth = 0
+  for(let i=0; i<s.length; i++){
+    if(s[i] === "("){
+      stack.push(s[i])
+      if(stack.length > depth) depth = stack.length
+    } else if(s[i] === ")"){
+      stack.pop()
+    }
+  }
+  return depth
+};
+```
+
+### 215
+
+where the f**k am I?
+
+```javascript
+/**
+ * @param {number[]} nums
+ * @param {number} k
+ * @return {number}
+ */
+const findKthLargest = (nums, k) => nums.sort((a,b) => b - a)[k-1]
+```
