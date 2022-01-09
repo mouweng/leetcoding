@@ -342,3 +342,26 @@ class Solution {
     }
 }
 ```
+## 2022.1.9
+[1328. 破坏回文串](https://leetcode-cn.com/problems/break-a-palindrome/)
+```java
+class Solution {
+    public String breakPalindrome(String palindrome) {
+        int n = palindrome.length();
+        if (n <= 1) return "";
+        int mid = n / 2;
+        StringBuilder sb = new StringBuilder(palindrome);
+        boolean found = false;
+        for (int i = 0; !found && i < n; i++) {
+            if ((sb.charAt(i) != 'a') && (n % 2 == 0 || (n % 2 == 1 && i != mid))) {
+                sb.setCharAt(i, 'a');
+                found = true;
+            }
+        }
+        if (!found) {
+            sb.setCharAt(sb.length() - 1, 'b');
+        }
+        return sb.toString();
+    }
+}
+```
