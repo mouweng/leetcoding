@@ -365,3 +365,26 @@ class Solution {
     }
 }
 ```
+[757. 设置交集大小至少为2](https://leetcode-cn.com/problems/set-intersection-size-at-least-two/)
+```java
+class Solution {
+    public int intersectionSizeTwo(int[][] intervals) {
+        Arrays.sort(intervals, (a, b) -> a[0] != b[0] ? a[0] - b[0] : b[1] - a[1]);
+        int n = intervals.length;
+        int[] remains = new int[n];
+        Arrays.fill(remains, 2);
+        int ans = 0;
+        for (int i = n - 1; i >= 0; i--) {
+            if (remains[i] == 0) continue;
+            int t = remains[i];
+            for (int j = intervals[i][0]; j < intervals[i][0] + t; j++) {
+                ans++;
+                for (int k = i; k >= 0 && j >= intervals[k][0]; k--) {
+                    if (remains[k] > 0 && j <= intervals[k][1]) remains[k]--;
+                }
+            }
+        }
+        return ans;
+    }
+}
+```
