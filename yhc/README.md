@@ -388,3 +388,27 @@ class Solution {
     }
 }
 ```
+## 2022.1.10
+[877. 石子游戏](https://leetcode-cn.com/problems/stone-game/)
+```java
+class Solution {
+    public boolean stoneGame(int[] piles) {
+        int n = piles.length;
+        int[][][] dp = new int[n][n][2]; // 0-最后一步是Alice，1-最后一步是Bob，val=Alice-Bob
+        for (int len = 1; len <= n; len++) {
+            for (int i = 0; i < n; i++) {
+                int j = i + len - 1;
+                if (j >= n) break;
+                if (i == j) {
+                    dp[i][j][0] = piles[i];
+                    dp[i][j][1] = -piles[i];
+                } else {
+                    dp[i][j][0] = Math.max(dp[i + 1][j][1] + piles[i], dp[i][j - 1][1] + piles[j]);
+                    dp[i][j][1] = Math.max(dp[i + 1][j][0] - piles[i], dp[i][j - 1][0] - piles[j]);
+                }
+            }
+        }
+        return dp[0][n-1][1] >= 0;
+    }
+}
+```
