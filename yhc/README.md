@@ -466,3 +466,45 @@ class Solution {
     }
 }
 ```
+[1798. 你能构造出连续值的最大数目](https://leetcode-cn.com/problems/maximum-number-of-consecutive-values-you-can-make/)
+```java
+class Solution {
+    public int getMaximumConsecutive(int[] coins) {
+        Arrays.sort(coins);
+        int n = coins.length;
+        int[] dp = new int[n + 1];
+        dp[0] = 1;
+        for (int j = 1; j <= n; j++) {
+            dp[j] = dp[j - 1];
+            if (dp[j - 1] >= coins[j - 1]) {
+                dp[j] += coins[j - 1];
+            }
+        }
+        return dp[n];
+    }
+}
+```
+[86. 分隔链表](https://leetcode-cn.com/problems/partition-list/)
+```java
+class Solution {
+    public ListNode partition(ListNode head, int x) {
+        ListNode p = head;
+        ListNode left = null, right = null;
+        ListNode tailLeft = null, tailRight = null;
+        while (p != null) {
+            if (p.val < x) {
+                if (left == null) left = p;
+                if (tailLeft != null) tailLeft.next = p;
+                tailLeft = p;
+            } else {
+                if (right == null) right = p;
+                if (tailRight != null) tailRight.next = p;
+                tailRight = p;
+            }
+            p = p.next;
+        }
+        if (tailLeft != null) tailLeft.next = right;
+        if (tailRight != null) tailRight.next = null;
+        return left == null ? right : left;
+    }
+```
