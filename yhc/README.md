@@ -412,3 +412,57 @@ class Solution {
     }
 }
 ```
+[2001. 可互换矩形的组数](https://leetcode-cn.com/problems/number-of-pairs-of-interchangeable-rectangles/)
+```java
+class Solution {
+    int gcd(int a, int b) {
+        return b == 0 ? a : gcd(b, a % b);
+    }
+    public long interchangeableRectangles(int[][] rectangles) {
+        int n = rectangles.length;
+        Map<Long, Integer> mp = new HashMap<>();
+        for (int i = 0; i < n; i++) {
+            int g = gcd(rectangles[i][0], rectangles[i][1]);
+            int pi = rectangles[i][0] / g;
+            int pj = rectangles[i][1] / g;
+            long key = 100000 * pi + pj;
+            mp.put(key, mp.getOrDefault(key, 0) + 1);
+        }
+        long ans = 0;
+        for (int value : mp.values()) {
+            ans = ans + (long) value * (long) (value - 1) / 2;
+        }
+        return ans;
+    }
+}
+```
+[306. 累加数](https://leetcode-cn.com/problems/additive-number/)
+```java
+import java.math.*;
+class Solution {
+    public boolean isAdditiveNumber(String num) {
+        int n = num.length();
+        for (int i = 1; i < n; i++) { // [0, i),[i, j),[j, j + s.length)
+            for (int j = i + 1; j < n; j++) {
+                int p0 = 0, p1 = i, p2 = j;
+                while (p2 < n) {
+                    if (num.charAt(p0) == '0' && p1 - p0 > 1) break;
+                    BigInteger first = new BigInteger(num.substring(p0, p1));
+                    if (num.charAt(p1) == '0' && p2 - p1 > 1) break;
+                    BigInteger second = new BigInteger(num.substring(p1, p2));
+                    BigInteger expect = first.add(second);
+                    String s = expect.toString();
+                    if (p2 + s.length() > n || (num.charAt(p2) == '0' && s.length() > 1)) break;
+                    BigInteger third = new BigInteger(num.substring(p2, p2 + s.length()));
+                    if (!expect.equals(third)) break;
+                    if (p2 + s.length() == n) return true;
+                    p0 = p1;
+                    p1 = p2;
+                    p2 = p2 + s.length();
+                } 
+            }
+        }
+        return false;
+    }
+}
+```
