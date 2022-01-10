@@ -12,3 +12,4 @@
 - **2022-01-07** | [1614. 括号的最大嵌套深度](https://leetcode-cn.com/problems/maximum-nesting-depth-of-the-parentheses/) [215. 数组中的第K个最大元素](https://leetcode-cn.com/problems/kth-largest-element-in-an-array/)
 - **2021-01-08** ｜ [89. 格雷编码](https://leetcode-cn.com/problems/gray-code/) [25. K 个一组翻转链表](https://leetcode-cn.com/problems/reverse-nodes-in-k-group/)
 - **2021-01-09** ｜ [1629. 按键持续时间最长的键](https://leetcode-cn.com/problems/slowest-key/) [912. 排序数组](https://leetcode-cn.com/problems/sort-an-array/)
+- **2021-01-10** | [306. 累加数](https://leetcode-cn.com/problems/additive-number/) [15. 三数之和](https://leetcode-cn.com/problems/3sum/)
