@@ -508,3 +508,40 @@ class Solution {
         return left == null ? right : left;
     }
 ```
+[333. 最大 BST 子树](https://leetcode-cn.com/problems/largest-bst-subtree/)
+```java
+class Solution {
+    class Resp {
+        int minVal;
+        int maxVal;
+        int val;
+        Resp(int minVal, int maxVal, int val) {
+            this.minVal = minVal;
+            this.maxVal = maxVal;
+            this.val = val;
+        }
+    };
+    final int inf = 100000;
+    int ans = 0;
+    private Resp solve(TreeNode root) {
+        if (root == null) return new Resp(inf, -inf, 0);
+        Resp left = solve(root.left);
+        Resp right = solve(root.right);
+        int minVal = Math.min(root.val, Math.min(left.minVal, right.minVal));
+        int maxVal = Math.max(root.val, Math.max(left.maxVal, right.maxVal));
+        if ((root.left != null && root.val <= root.left.val) || 
+                (root.right != null && root.val >= root.right.val) ||
+                left.val == -1 || right.val == -1) {
+            return new Resp(minVal, maxVal, -1);
+        }
+        int val = 1 + left.val + right.val;
+        if (left.maxVal < root.val && right.minVal > root.val) ans = Math.max(ans, val);
+        return new Resp(minVal, maxVal, val);
+    }
+    public int largestBSTSubtree(TreeNode root) {
+        ans = 0;
+        solve(root);
+        return ans;
+    }
+}
+```
