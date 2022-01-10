@@ -340,3 +340,69 @@ class Solution {
     }
 }
 ```
+
+### 2022-01-10
+#### [306. 累加数](https://leetcode-cn.com/problems/additive-number/)
+```java
+class Solution {
+    public boolean isAdditiveNumber(String num) {
+        int n = num.length();
+        char[] numsChar = num.toCharArray();
+        for (int i = 0 ; i< n-1;i++){
+            if (numsChar[0] == '0' && i > 0)return false;
+            for (int j = i+1;j< n-1;j++){
+                if (numsChar[i+1] == '0' && j > i+1)continue;
+                Long pre = Long.parseLong(num.substring(0,i+1));
+                Long cur = Long.parseLong(num.substring(i+1,j+1));
+                if (dfs(numsChar,pre,cur,num,n,j+1))return true;
+            }
+        }
+        return false;
+    }
+    public boolean dfs (char[] numsChar,Long pre,Long cur ,String num,int n,int now){
+        if (now == n)return true;
+        for (int i = now;i<n;i++){
+            if (numsChar[now] == '0' && i > now)return false;
+            Long next = Long.parseLong(num.substring(now,i+1));
+            if (next > pre + cur)return false;
+            if (next == pre + cur){
+                if (dfs(numsChar,cur,next,num,n,i+1))
+                    return true;
+                break;
+            }
+        }
+        return false;
+    }
+}
+```
+#### [15. 三数之和](https://leetcode-cn.com/problems/3sum/)
+```java
+class Solution {
+    public List<List<Integer>> threeSum(int[] nums) {
+        List<List<Integer>> res = new ArrayList<>();
+        int len = nums.length;
+        if (len < 3) return res; 
+        Arrays.sort(nums);
+        for (int i = 0; i < len - 2 && nums[i] <= 0; i ++) {
+            if (i > 0 && nums[i] == nums[i - 1]) continue;
+            int j = i + 1, k = len - 1;
+            while (j < k) {
+                int sum = nums[i] + nums[j] + nums[k];
+                if (sum < 0) {
+                    j ++;
+                } else if (sum > 0) {
+                    k --;
+                } else {
+                    List<Integer> temp = new ArrayList<>();
+                    temp.add(nums[i]);temp.add(nums[j]);temp.add(nums[k]);
+                    res.add(temp);
+                    j ++;k --;
+                    while (j < len&&nums[j] == nums[j - 1]) j ++;
+                    while (k > i&& nums[k] == nums[k + 1]) k --;
+                }
+            }  
+        }
+        return res;
+    }
+}
+```
