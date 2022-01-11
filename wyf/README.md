@@ -406,3 +406,19 @@ class Solution {
     }
 }
 ```
+
+### 2022-01-11
+#### [53. 最大子数组和](https://leetcode-cn.com/problems/maximum-subarray/)
+```java
+class Solution {
+    public int maxSubArray(int[] nums) {
+        int len = nums.length, max = nums[0];
+        int dp = nums[0];
+        for (int i = 1; i < len; i ++) {
+            dp = Math.max(nums[i] + dp, nums[i]);
+            max = Math.max(dp, max);
+        }
+        return max;
+    }
+}
+```
