@@ -318,3 +318,30 @@ where the f**k am I?
  */
 const findKthLargest = (nums, k) => nums.sort((a,b) => b - a)[k-1]
 ```
+
+## 2022-01-12
+
+### 334 
+
+find min, find 2nd min, ...
+
+```javascript
+/**
+ * @param {number[]} nums
+ * @return {boolean}
+ */
+var increasingTriplet = function(nums) {
+  let one = Infinity, two = Infinity
+  let ret = false
+  nums.forEach(num => {
+    if(num <= one){
+      one = num
+    } else if(num <= two){
+      two = num
+    } else {
+      ret = true
+    }
+  })
+  return ret
+};
+```
