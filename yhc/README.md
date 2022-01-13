@@ -570,3 +570,29 @@ class Solution {
     }
 }
 ```
+## 2022.1.13
+[747. 至少是其他数字两倍的最大数](https://leetcode-cn.com/problems/largest-number-at-least-twice-of-others/)
+```java
+class Solution {
+    public int dominantIndex(int[] nums) {
+        int n = nums.length;
+        if (n == 1) return 0;
+        int p0 = 0;
+        int p1 = 1;
+        if (nums[p0] > nums[p1]) {
+            int tmp = p0;
+            p0 = p1;
+            p1 = tmp;
+        }
+        for (int i = 2; i < n; i++) {
+            if (nums[i] >= nums[p1]) {
+                p0 = p1;
+                p1 = i;
+            } else if (nums[i] > nums[p0]) {
+                p0 = i;
+            }
+        }
+        return nums[p1] >= 2 * nums[p0] ? p1 : -1;
+    }
+}
+```
