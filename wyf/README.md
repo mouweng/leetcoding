@@ -422,3 +422,45 @@ class Solution {
     }
 }
 ```
+
+### 2022-01-13
+#### [747. 至少是其他数字两倍的最大数](https://leetcode-cn.com/problems/largest-number-at-least-twice-of-others/)
+```java
+class Solution {
+    public int dominantIndex(int[] nums) {
+        if (nums.length == 1) return 0;
+        PriorityQueue<int[]> pq = new PriorityQueue<int[]>((a,b)->{
+            return b[0] - a[0];
+        });
+        for (int i = 0; i < nums.length; i ++) {
+            pq.offer(new int[]{nums[i], i});
+        }
+        int[] max = pq.poll();
+        int[] nextmax = pq.poll();
+        if (max[0] >= 2 * nextmax[0]) return max[1];
+        else return -1;
+    }
+}
+```
+
+#### [21. 合并两个有序链表](https://leetcode-cn.com/problems/merge-two-sorted-lists/)
+```java
+class Solution {
+    public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+        ListNode newHead = new ListNode(-1);
+        ListNode t = newHead;
+        while (l1 != null && l2 != null) {
+            if (l1.val < l2.val) {
+                t.next = l1;
+                l1 = l1.next;
+            } else {
+                t.next = l2;
+                l2 = l2.next;
+            }
+            t = t.next;
+        }
+        t.next = l1 == null? l2 : l1;
+        return newHead.next;
+    }
+}
+```
