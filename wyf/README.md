@@ -464,3 +464,50 @@ class Solution {
     }
 }
 ```
+
+### 2022-01-14
+#### [373. 查找和最小的K对数字](https://leetcode-cn.com/problems/find-k-pairs-with-smallest-sums/)
+- 优先队列
+
+```java
+class Solution {
+    public List<List<Integer>> kSmallestPairs(int[] nums1, int[] nums2, int k) {
+        List<List<Integer>> res = new ArrayList<>();
+        PriorityQueue<int[]> pq = new PriorityQueue<int[]>((a, b)->{
+            return (b[0] + b[1]) - (a[0] + a[1]);
+        });
+        for (int i = 0; i < Math.min(k,nums1.length); i ++) {
+            for (int j = 0; j < Math.min(k,nums2.length); j ++) {
+                pq.offer(new int[]{nums1[i], nums2[j]});
+                if (pq.size() > k) {
+                    pq.poll();
+                }
+            }
+        }
+        while (k -- > 0 && !pq.isEmpty()) {
+            int[] p = pq.poll();
+            List<Integer> l = new ArrayList<Integer>();
+            l.add(p[0]);
+            l.add(p[1]);
+            res.add(l);
+        }
+        return res;
+    }
+}
+```
+
+#### [141. 环形链表](https://leetcode-cn.com/problems/linked-list-cycle/)
+- 快慢指针
+```java
+public class Solution {
+    public boolean hasCycle(ListNode head) {
+        ListNode f = head, s = head;
+        while (f != null && s != null && f.next != null) {
+            f = f.next.next;
+            s = s.next;
+            if(s == f) return true;
+        }
+        return false;
+    }
+}
+```
