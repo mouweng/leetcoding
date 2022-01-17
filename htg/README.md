@@ -4,8 +4,6 @@
 
 ### 846
 
-感觉很蠢
-
 ```javascript
 /**
  * @param {number[]} hand
@@ -344,4 +342,89 @@ var increasingTriplet = function(nums) {
   })
   return ret
 };
+```
+
+## 2022-01-16
+
+### 382
+
+```javascript
+  // get length
+  /**
+  * Definition for singly-linked list.
+  * function ListNode(val, next) {
+  *     this.val = (val===undefined ? 0 : val)
+  *     this.next = (next===undefined ? null : next)
+  * }
+  */
+  /**
+  * @param {ListNode} head
+  */
+  var Solution = function(head) { 
+    this.list = [];
+    
+    let cur = head;
+    while(cur){
+      this.list.push(cur.val);
+      cur = cur.next;
+    }
+    
+    this.length = this.list.length;
+  };
+
+  /**
+  * @return {number}
+  */
+  Solution.prototype.getRandom = function() {
+    const rdnum = Math.floor(Math.random() * this.length);
+    return this.list[rdnum]
+  };
+
+  /** 
+  * Your Solution object will be instantiated and called as such:
+  * var obj = new Solution(head)
+  * var param_1 = obj.getRandom()
+  */
+```
+
+```javascript
+// What if the linked list is extremely large and its length is unknown to you?
+// https://en.wikipedia.org/wiki/Reservoir_sampling
+// 慢爆
+  /**
+  * Definition for singly-linked list.
+  * function ListNode(val, next) {
+  *     this.val = (val===undefined ? 0 : val)
+  *     this.next = (next===undefined ? null : next)
+  * }
+  */
+  /**
+  * @param {ListNode} head
+  */
+  var Solution = function(head) {
+    // RESERVOIR SAMPLING
+    this.head = head;
+  };
+
+  /**
+  * @return {number}
+  */
+  Solution.prototype.getRandom = function() {
+    let cur = this.head;
+    let range = 1, result = 0;
+    while(cur){
+      if(Math.random() < 1/range){
+        result = cur.val;
+      }
+      range++;
+      cur = cur.next;
+    }
+    return result;
+  };
+
+  /** 
+  * Your Solution object will be instantiated and called as such:
+  * var obj = new Solution(head)
+  * var param_1 = obj.getRandom()
+  */
 ```
