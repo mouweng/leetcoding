@@ -18,4 +18,5 @@
 - **2022-01-13** | [747. 至少是其他数字两倍的最大数](https://leetcode-cn.com/problems/largest-number-at-least-twice-of-others/) [21. 合并两个有序链表](https://leetcode-cn.com/problems/merge-two-sorted-lists/)
 - **2022-01-14** | [373. 查找和最小的K对数字](https://leetcode-cn.com/problems/find-k-pairs-with-smallest-sums/) [141. 环形链表](https://leetcode-cn.com/problems/linked-list-cycle/)
 - **2022-01-15** | [1716. 计算力扣银行的钱](https://leetcode-cn.com/problems/calculate-money-in-leetcode-bank/) | [102. 二叉树的层序遍历](https://leetcode-cn.com/problems/binary-tree-level-order-traversal/)
-- **2022-01-16** | [382. 链表随机节点](https://leetcode-cn.com/problems/linked-list-random-node/) [382. 链表随机节点](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/)
+- **2022-01-16** | [382. 链表随机节点](https://leetcode-cn.com/problems/linked-list-random-node/) [121. 买卖股票的最佳时机](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/)
+- **2022-01-17** | [1220. 统计元音字母序列的数目](https://leetcode-cn.com/problems/count-vowels-permutation/) [160. 相交链表](https://leetcode-cn.com/problems/intersection-of-two-linked-lists/)
