@@ -428,3 +428,32 @@ var increasingTriplet = function(nums) {
   * var param_1 = obj.getRandom()
   */
 ```
+
+## 2022-01-18
+
+### 539
+
+```javascript
+/**
+ * @param {string[]} timePoints
+ * @return {number}
+ */
+const reducer = (prev, cur) => {
+  let [prev_i, cur_i] = [prev, cur].map(i => parseInt(i));
+  if(prev_i === 0){
+    prev_i = 24;
+  }
+  return prev_i*60 + cur_i;
+}
+
+var findMinDifference = function(timePoints) {
+  const minutes = timePoints
+  .map(time => time.split(':').reduce(reducer))
+  .sort((a,b) => a-b)
+  const diff = minutes
+  .map((min, idx, arr) => idx === 0 ? min : min - arr[idx-1])
+  .slice(1)
+
+  return Math.min(...diff, 1440 + minutes[0] - minutes.pop());
+};
+```
