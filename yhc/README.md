@@ -596,3 +596,35 @@ class Solution {
     }
 }
 ```
+## 2022.1.17
+[1220. 统计元音字母序列的数目](https://leetcode-cn.com/problems/count-vowels-permutation/)
+```java
+class Solution {
+    final int inf = (int)1e9 + 7;
+    public int countVowelPermutation(int n) {
+        List<List<Integer>> next = new ArrayList<>();
+        // 0-a 1-e 2-i o-3 u-4
+        next.add(new ArrayList<>(List.of(1, 2, 4)));
+        next.add(new ArrayList<>(List.of(0, 2)));
+        next.add(new ArrayList<>(List.of(1, 3)));
+        next.add(new ArrayList<>(List.of(2)));
+        next.add(new ArrayList<>(List.of(2, 3)));
+        int[][] dp = new int[n + 1][5];
+        Arrays.fill(dp[1], 1);
+        for (int i = 2; i <= n; i++) {
+            for (int j = 0; j < 5; j++) {
+                for (int pre : next.get(j)) {
+                    dp[i][j] += dp[i - 1][pre];
+                    dp[i][j] %= inf;
+                }
+            }
+        }
+        int ans = 0;
+        for (int di : dp[n]) {
+            ans += di;
+            ans %= inf;
+        }
+        return ans;
+    }
+}
+```
