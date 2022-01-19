@@ -21,3 +21,4 @@
 - **2022-01-16** | [382. 链表随机节点](https://leetcode-cn.com/problems/linked-list-random-node/) [121. 买卖股票的最佳时机](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/)
 - **2022-01-17** | [1220. 统计元音字母序列的数目](https://leetcode-cn.com/problems/count-vowels-permutation/) [160. 相交链表](https://leetcode-cn.com/problems/intersection-of-two-linked-lists/)
 - **2022-01-18** | [539. 最小时间差](https://leetcode-cn.com/problems/minimum-time-difference/) [88. 合并两个有序数组](https://codetop.cc/home)
+- **2022-01-19** ｜ [219. 存在重复元素 II](https://leetcode-cn.com/problems/contains-duplicate-ii/) [103. 二叉树的锯齿形层序遍历](https://leetcode-cn.com/problems/binary-tree-zigzag-level-order-traversal/)
