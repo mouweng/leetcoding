@@ -23,3 +23,4 @@
 - **2022-01-18** | [539. 最小时间差](https://leetcode-cn.com/problems/minimum-time-difference/) [88. 合并两个有序数组](https://codetop.cc/home)
 - **2022-01-19** ｜ [219. 存在重复元素 II](https://leetcode-cn.com/problems/contains-duplicate-ii/) [103. 二叉树的锯齿形层序遍历](https://leetcode-cn.com/problems/binary-tree-zigzag-level-order-traversal/)
 - **2022-01-20** ｜ [2029. 石子游戏 IX](https://leetcode-cn.com/problems/stone-game-ix/) [88. 合并两个有序数组](https://leetcode-cn.com/problems/merge-sorted-array/)
+- **2022-01-21** | [1345. 跳跃游戏 IV](https://leetcode-cn.com/problems/jump-game-iv/) [236. 二叉树的最近公共祖先](https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/)
