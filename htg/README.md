@@ -505,3 +505,66 @@ var containsNearbyDuplicate = function(nums, k) {
   return false;
 };
 ```
+
+## 2022-01-22
+
+### 1332
+
+什么脑筋急转弯
+
+```javascript
+/**
+ * @param {string} s
+ * @return {number}
+ */
+
+// palindrome => 1
+// non -> strip(a*) -> strip(b*)
+var removePalindromeSub = function(s) {
+  let flag = true;
+  for(let i=0, j=s.length-1; i<j;){
+    if(s[i] !== s[j]) flag = false;
+    i++, j--;
+  }
+  if(flag) return 1
+  else return 2
+};
+```
+
+### 20
+
+偷懒
+
+```javascript
+/**
+ * @param {string} s
+ * @return {boolean}
+ */
+var isValid = function(s) {
+  const stack = [];
+  stack.push(s[0]);
+  let flag = true;
+  for(let i=1; i<s.length ; i++){
+    if(s[i] === '(' || s[i] === '[' || s[i] === '{') {
+      stack.push(s[i]);
+    } 
+    else if(s[i] === ')' && stack[stack.length - 1] === "("){
+      stack.pop();
+    }
+    else if(s[i] === '}' && stack[stack.length - 1] === "{"){
+      stack.pop();
+    }
+    else if(s[i] === ']' && stack[stack.length - 1] === "["){
+      stack.pop();
+    } 
+    else {
+      flag = false;
+      break;
+    }
+  }
+  if(stack.length !== 0) flag = false;
+  return flag;
+};  
+```
+
+### 
