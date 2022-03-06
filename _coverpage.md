@@ -7,6 +7,6 @@
 - 工作日每日一题，目前题源来自于leetcode每日一题和CodeTop
 - 打卡方式：在自己目录下面编写题解以证明打卡
 
-[Github](https://github.com/mouweng/Leetcoding)
+[Github](https://github.com/mouweng/leetcoding)
 [Docsify](https://docsify.js.org/#/)
-[Getting Start](https://mouweng.github.io/Leetcoding/#/)
+[Getting Start](https://mouweng.github.io/leetcoding/#/)
