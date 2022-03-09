@@ -1,4 +1,4 @@
-# 题目列表
+# 错题列表
 
 |  题目来源   | 题解  | 时间 | 难度 |
 |  ----  | ----  | ---- |  ----  |
@@ -10,4 +10,10 @@
 | leetcode双周赛73 | [5300. 有向无环图中一个节点的所有祖先](test/有向无环图中一个节点的所有祖先) | 2022-03-05 | medium |
 | leetcode周赛283 | [6017. 向数组中追加 K 个整数](test/向数组中追加K个整数)  | 2022-03-06 | medium |
 | leetcode周赛283 | [6018. 根据描述创建二叉树](test/根据描述创建二叉树) | 2022-03-06 | medium |
+| codetop | [236. 二叉树的最近公共祖先](https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree) | 2022-03-08 | medium |
+| codetop | [33. 搜索旋转排序数组](https://leetcode-cn.com/problems/search-in-rotated-sorted-array/) | 2022-03-08 | medium |
+| codetop | [142. 环形链表 II](https://leetcode-cn.com/problems/linked-list-cycle-ii/) | 2022-03-09 | medium |
+| codetop | [300. 最长递增子序列](https://leetcode-cn.com/problems/longest-increasing-subsequence/) | 2022-03-09 | medium |
+| codetop | [42. 接雨水](https://leetcode-cn.com/problems/trapping-rain-water/) | 2022-03-09 | medium |
+| codetop | [124. 二叉树中的最大路径和](https://leetcode-cn.com/problems/binary-tree-maximum-path-sum/) | 2022-03-09 | medium |
 
