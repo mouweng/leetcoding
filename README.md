@@ -14,6 +14,7 @@
 | codetop | [33. 搜索旋转排序数组](https://leetcode-cn.com/problems/search-in-rotated-sorted-array/) | 2022-03-08 | medium |
 | codetop | [142. 环形链表 II](https://leetcode-cn.com/problems/linked-list-cycle-ii/) | 2022-03-09 | medium |
 | codetop | [300. 最长递增子序列](https://leetcode-cn.com/problems/longest-increasing-subsequence/) | 2022-03-09 | medium |
-| codetop | [42. 接雨水](https://leetcode-cn.com/problems/trapping-rain-water/) | 2022-03-09 | medium |
+| codetop | [42. 接雨水](https://leetcode-cn.com/problems/trapping-rain-water/) | 2022-03-09 | hard |
 | codetop | [124. 二叉树中的最大路径和](https://leetcode-cn.com/problems/binary-tree-maximum-path-sum/) | 2022-03-09 | medium |
+| codetop | [8. 字符串转换整数 (atoi)](https://leetcode-cn.com/problems/string-to-integer-atoi/) | 2022-03-17 | medium |
 
