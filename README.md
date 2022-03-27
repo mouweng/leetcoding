@@ -17,4 +17,5 @@
 | codetop | [42. 接雨水](https://leetcode-cn.com/problems/trapping-rain-water/) | 2022-03-09 | hard |
 | codetop | [124. 二叉树中的最大路径和](https://leetcode-cn.com/problems/binary-tree-maximum-path-sum/) | 2022-03-09 | medium |
 | codetop | [8. 字符串转换整数 (atoi)](https://leetcode-cn.com/problems/string-to-integer-atoi/) | 2022-03-17 | medium |
-
+| leetcode | [743. 网络延迟时间](https://leetcode-cn.com/problems/network-delay-time/) | 2022-03-27 | medium |
+| leetcode | [1334. 阈值距离内邻居最少的城市](https://leetcode-cn.com/problems/find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance/) | 2022-03-27 | medium |
