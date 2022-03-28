@@ -19,3 +19,4 @@
 | codetop | [8. 字符串转换整数 (atoi)](https://leetcode-cn.com/problems/string-to-integer-atoi/) | 2022-03-17 | medium |
 | leetcode | [743. 网络延迟时间](https://leetcode-cn.com/problems/network-delay-time/) | 2022-03-27 | medium |
 | leetcode | [1334. 阈值距离内邻居最少的城市](https://leetcode-cn.com/problems/find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance/) | 2022-03-27 | medium |
+| 网易互联网笔试 | [小红闯沼泽地](test/小红闯沼泽地) | 2022-03-28 | hard |
