@@ -20,3 +20,5 @@
 | leetcode | [743. 网络延迟时间](https://leetcode-cn.com/problems/network-delay-time/) | 2022-03-27 | medium |
 | leetcode | [1334. 阈值距离内邻居最少的城市](https://leetcode-cn.com/problems/find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance/) | 2022-03-27 | medium |
 | 网易互联网笔试 | [小红闯沼泽地](test/小红闯沼泽地) | 2022-03-28 | hard |
+| codetop | [39. 组合总和](https://leetcode-cn.com/problems/combination-sum/) | 2022-04-01 | medium |
+| Codetop | [322. 零钱兑换](https://leetcode-cn.com/problems/coin-change/) | 2022-04-01 | medium |
