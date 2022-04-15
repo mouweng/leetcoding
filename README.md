@@ -23,3 +23,8 @@
 | codetop | [39. 组合总和](https://leetcode-cn.com/problems/combination-sum/) | 2022-04-01 | medium |
 | codetop | [322. 零钱兑换](https://leetcode-cn.com/problems/coin-change/) | 2022-04-01 | medium |
 | codetop | [72. 编辑距离](https://leetcode-cn.com/problems/edit-distance/) | 2022-04-09 | hard |
+| codetop | [78. 子集](https://leetcode-cn.com/problems/subsets/) | 2022-04-14 | medium |
+| leetcode | [76. 最小覆盖子串](https://leetcode-cn.com/problems/minimum-window-substring/) | 2022-04-15 | medium |
+| leetcode | [85. 最大矩形](https://leetcode-cn.com/problems/maximal-rectangle/) | 2022-04-15 | medium |
+| codetop | [128. 最长连续序列](https://leetcode-cn.com/problems/longest-consecutive-sequence/) | 2022-04-15 | medium |
+
