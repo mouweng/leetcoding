@@ -31,7 +31,7 @@
 | leetcode双周赛76 | [6061. 买钢笔和铅笔的方案数](https://leetcode-cn.com/problems/number-of-ways-to-buy-pens-and-pencils/) | 2022-04-16 | medium |
 | leetcode双周赛76 | [6062. 设计一个 ATM 机器](https://leetcode-cn.com/problems/design-an-atm-machine/) | 2022-04-16 | medium |
 | codetop | [662. 二叉树最大宽度](https://leetcode-cn.com/problems/maximum-width-of-binary-tree/) | 2022-04-17 | medium |
-| codetop | [718. 最长重复子数组](https://leetcode-cn.com/problems/maximum-length-of-repeated-subarray/) | 2022-04-17 | medium |
+| codetop | [718. 最长重复子数组](https://leetcode-cn.com/problems/maximum-length-of-repeated-subarray/) & [1143. 最长公共子序列](https://leetcode-cn.com/problems/longest-common-subsequence/) | 2022-04-17 | medium |
 | codetop | [470. 用 Rand7() 实现 Rand10()](https://leetcode-cn.com/problems/implement-rand10-using-rand7/) | 2022-04-17 | easy |
 | codetop | [32. 最长有效括号](https://leetcode-cn.com/problems/longest-valid-parentheses/) | 2022-04-17 | hard |
 
