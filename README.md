@@ -31,7 +31,22 @@
 | leetcode双周赛76 | [6061. 买钢笔和铅笔的方案数](https://leetcode-cn.com/problems/number-of-ways-to-buy-pens-and-pencils/) | 2022-04-16 | medium |
 | leetcode双周赛76 | [6062. 设计一个 ATM 机器](https://leetcode-cn.com/problems/design-an-atm-machine/) | 2022-04-16 | medium |
 | codetop | [662. 二叉树最大宽度](https://leetcode-cn.com/problems/maximum-width-of-binary-tree/) | 2022-04-17 | medium |
-| codetop | [718. 最长重复子数组](https://leetcode-cn.com/problems/maximum-length-of-repeated-subarray/) & [1143. 最长公共子序列](https://leetcode-cn.com/problems/longest-common-subsequence/) | 2022-04-17 | medium |
 | codetop | [470. 用 Rand7() 实现 Rand10()](https://leetcode-cn.com/problems/implement-rand10-using-rand7/) | 2022-04-17 | easy |
 | codetop | [32. 最长有效括号](https://leetcode-cn.com/problems/longest-valid-parentheses/) | 2022-04-17 | hard |
+
+
+
+
+
+## DP
+
+| 题目                                                         | 题解                          | 时间       | 难度   |
+| ------------------------------------------------------------ | ----------------------------- | ---------- | ------ |
+| [198. 打家劫舍](https://leetcode-cn.com/problems/house-robber/) | [题解](dp/打家劫舍)           | 2022-04-18 | medium |
+| [213. 打家劫舍 II](https://leetcode-cn.com/problems/house-robber-ii/) | [题解](dp/打家劫舍)           | 2022-04-18 | medium |
+| [圆环回原点问题](https://mp.weixin.qq.com/s/NZPaFsFrTybO3K3s7p7EVg) |                               | 2022-04-18 | medium |
+| [1143. 最长公共子序列](https://leetcode-cn.com/problems/longest-common-subsequence/) | [题解](dp/最长公共子序列)     | 2022-04-18 | medium |
+| [718. 最长重复子数组](https://leetcode-cn.com/problems/maximum-length-of-repeated-subarray/) | [题解](dp/最长重复子数组)     | 2022-04-18 | medium |
+| [300. 最长递增子序列](https://leetcode-cn.com/problems/longest-increasing-subsequence/) | [题解](dp/最长递增子序列)     | 2022-04-18 | medium |
+| [买卖股票的最佳时机系列](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock) | [题解](dp/买卖股票的最佳时机) | 2022-04-18 | medium |
 
