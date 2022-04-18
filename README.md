@@ -1,4 +1,4 @@
-# 错题列表
+# 题目精选列表
 
 |  题目来源   | 题解  | 时间 | 难度 |
 |  ----  | ----  | ---- |  ----  |
@@ -40,13 +40,16 @@
 
 ## DP
 
-| 题目                                                         | 题解                          | 时间       | 难度   |
-| ------------------------------------------------------------ | ----------------------------- | ---------- | ------ |
-| [198. 打家劫舍](https://leetcode-cn.com/problems/house-robber/) | [题解](dp/打家劫舍)           | 2022-04-18 | medium |
-| [213. 打家劫舍 II](https://leetcode-cn.com/problems/house-robber-ii/) | [题解](dp/打家劫舍)           | 2022-04-18 | medium |
-| [圆环回原点问题](https://mp.weixin.qq.com/s/NZPaFsFrTybO3K3s7p7EVg) |                               | 2022-04-18 | medium |
-| [1143. 最长公共子序列](https://leetcode-cn.com/problems/longest-common-subsequence/) | [题解](dp/最长公共子序列)     | 2022-04-18 | medium |
-| [718. 最长重复子数组](https://leetcode-cn.com/problems/maximum-length-of-repeated-subarray/) | [题解](dp/最长重复子数组)     | 2022-04-18 | medium |
-| [300. 最长递增子序列](https://leetcode-cn.com/problems/longest-increasing-subsequence/) | [题解](dp/最长递增子序列)     | 2022-04-18 | medium |
-| [买卖股票的最佳时机系列](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock) | [题解](dp/买卖股票的最佳时机) | 2022-04-18 | medium |
-
+| 题目                                                         | 题解                                                        | 时间       | 思路     |
+| ------------------------------------------------------------ | ----------------------------------------------------------- | ---------- | -------- |
+| [198. 打家劫舍](https://leetcode-cn.com/problems/house-robber/) | [题解](dp/打家劫舍)                                         | 2022-04-18 | 斐波那契 |
+| [213. 打家劫舍 II](https://leetcode-cn.com/problems/house-robber-ii/) | [题解](dp/打家劫舍)                                         | 2022-04-18 | 斐波那契 |
+| [圆环回原点问题](https://mp.weixin.qq.com/s/NZPaFsFrTybO3K3s7p7EVg) | [题解]((https://mp.weixin.qq.com/s/NZPaFsFrTybO3K3s7p7EVg)) | 2022-04-18 | 斐波那契 |
+| [1143. 最长公共子序列](https://leetcode-cn.com/problems/longest-common-subsequence/) | [题解](dp/最长公共子序列)                                   | 2022-04-18 | 最长问题 |
+| [718. 最长重复子数组](https://leetcode-cn.com/problems/maximum-length-of-repeated-subarray/) | [题解](dp/最长重复子数组)                                   | 2022-04-18 | 最长问题 |
+| [300. 最长递增子序列](https://leetcode-cn.com/problems/longest-increasing-subsequence/) | [题解](dp/最长递增子序列)                                   | 2022-04-18 | 最长问题 |
+| [买卖股票的最佳时机系列](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock) | [题解](dp/买卖股票的最佳时机)                               | 2022-04-18 | 股票问题 |
+| [416. 分割等和子集](https://leetcode-cn.com/problems/partition-equal-subset-sum/) | [题解](dp/分割等和子集)                                     | 2022-04-18 | 01背包   |
+| [494. 目标和](https://leetcode-cn.com/problems/target-sum/)  | [题解](dp/目标和)                                           | 2022-04-18 | 01背包   |
+| [474. 一和零](https://leetcode-cn.com/problems/ones-and-zeroes/) | [题解](dp/一和零)                                           | 2022-04-18 | 01背包   |
+| [零钱兑换I、II](https://leetcode-cn.com/problems/coin-change/) | [题解](dp/零钱兑换)                                         | 2022-04-18 | 完全背包 |
