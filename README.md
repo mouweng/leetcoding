@@ -56,3 +56,22 @@
 | [583. 两个字符串的删除操作](https://leetcode-cn.com/problems/delete-operation-for-two-strings/) | [题解](dp/两个字符串的删除操作)                             | 2022-04-19 | 字符串dp          |
 | [42. 接雨水](https://leetcode-cn.com/problems/trapping-rain-water/) | [题解](dp/接雨水)                                           | 2022-04-19 | 普通dp            |
 | [221. 最大正方形](https://leetcode-cn.com/problems/maximal-square/) | [题解](dp/最大正方形)                                       | 2022-04-19 | 矩形dp            |
+
+
+
+## 技巧
+
+| 题目                                                         | 题解                           | 时间       | 思路           |
+| ------------------------------------------------------------ | ------------------------------ | ---------- | -------------- |
+| [31. 下一个排列](https://leetcode-cn.com/problems/next-permutation/) | [题解](skill/下一个排列)       | 2022-04-20 | 技巧           |
+| [41. 缺失的第一个正数](https://leetcode-cn.com/problems/first-missing-positive/) | [题解](skill/缺失的第一个正数) | 2022-04-20 | 把自己当作hash |
+
+
+
+## BFS/DFS
+
+| 题目                                                         | 题解                        | 时间       | 思路     |
+| ------------------------------------------------------------ | --------------------------- | ---------- | -------- |
+| [93. 复原 IP 地址](https://leetcode-cn.com/problems/restore-ip-addresses/) | [题解](search/复原 IP 地址) | 2022-04-20 | BFS+回溯 |
+| [22. 括号生成](https://leetcode-cn.com/problems/generate-parentheses/) | [题解](search/括号生成)     | 2022-04-20 | BFS+回溯 |
+
