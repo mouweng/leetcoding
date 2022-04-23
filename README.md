@@ -63,8 +63,11 @@
 
 | 题目                                                         | 题解                           | 时间       | 思路           |
 | ------------------------------------------------------------ | ------------------------------ | ---------- | -------------- |
-| [31. 下一个排列](https://leetcode-cn.com/problems/next-permutation/) | [题解](skill/下一个排列)       | 2022-04-20 | 技巧           |
+| [31. 下一个排列](https://leetcode-cn.com/problems/next-permutation/) | [题解](skill/下一个排列)       | 2022-04-20 |                |
 | [41. 缺失的第一个正数](https://leetcode-cn.com/problems/first-missing-positive/) | [题解](skill/缺失的第一个正数) | 2022-04-20 | 把自己当作hash |
+| [33. 搜索旋转排序数组](https://leetcode-cn.com/problems/search-in-rotated-sorted-array/) | [题解](skill/搜索旋转排序数组) | 2022-04-21 |                |
+| [142. 环形链表 II](https://leetcode-cn.com/problems/linked-list-cycle-ii/) | [题解](skill/环形链表)         | 2022-04-22 | 快慢指针       |
+| [8. 字符串转换整数 (atoi)](https://leetcode-cn.com/problems/string-to-integer-atoi/) | [题解](skill/字符串转换整数)   | 2022-04-23 | 处理溢出的细节 |
 
 
 
@@ -74,4 +77,20 @@
 | ------------------------------------------------------------ | --------------------------- | ---------- | -------- |
 | [93. 复原 IP 地址](https://leetcode-cn.com/problems/restore-ip-addresses/) | [题解](search/复原 IP 地址) | 2022-04-20 | BFS+回溯 |
 | [22. 括号生成](https://leetcode-cn.com/problems/generate-parentheses/) | [题解](search/括号生成)     | 2022-04-20 | BFS+回溯 |
+
+
+
+## 贪心
+
+| 题目                                                         | 题解                    | 时间       | 思路      |
+| ------------------------------------------------------------ | ----------------------- | ---------- | --------- |
+| [56. 合并区间](https://leetcode-cn.com/problems/merge-intervals/) | [题解](greedy/合并区间) | 2022-04-23 | 排序+贪心 |
+
+
+
+## 链表
+
+| 题目                                                         | 题解                        | 时间       | 思路      |
+| ------------------------------------------------------------ | --------------------------- | ---------- | --------- |
+| [148. 排序链表](https://leetcode-cn.com/problems/sort-list/) | [题解](linkedlist/排序链表) | 2022-04-23 | 链表+归并 |
 
