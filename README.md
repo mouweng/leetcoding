@@ -23,7 +23,7 @@
 | leetcode | [76. 最小覆盖子串](https://leetcode-cn.com/problems/minimum-window-substring/) | 2022-04-15 | medium |
 | leetcode | [85. 最大矩形](https://leetcode-cn.com/problems/maximal-rectangle/) | 2022-04-15 | medium |
 | codetop | [128. 最长连续序列](https://leetcode-cn.com/problems/longest-consecutive-sequence/) | 2022-04-15 | medium |
-| codetop | [239. 滑动窗口最大值](https://leetcode-cn.com/problems/sliding-window-maximum/) | 2022-04-15 | hard |
+|                  |                                                              |            |        |
 | leetcode双周赛76 | [6061. 买钢笔和铅笔的方案数](https://leetcode-cn.com/problems/number-of-ways-to-buy-pens-and-pencils/) | 2022-04-16 | medium |
 | leetcode双周赛76 | [6062. 设计一个 ATM 机器](https://leetcode-cn.com/problems/design-an-atm-machine/) | 2022-04-16 | medium |
 | codetop | [662. 二叉树最大宽度](https://leetcode-cn.com/problems/maximum-width-of-binary-tree/) | 2022-04-17 | medium |
@@ -63,11 +63,12 @@
 
 | 题目                                                         | 题解                           | 时间       | 思路           |
 | ------------------------------------------------------------ | ------------------------------ | ---------- | -------------- |
-| [31. 下一个排列](https://leetcode-cn.com/problems/next-permutation/) | [题解](skill/下一个排列)       | 2022-04-20 |                |
+| [31. 下一个排列](https://leetcode-cn.com/problems/next-permutation/) | [题解](skill/下一个排列)       | 2022-04-20 | 双指针         |
 | [41. 缺失的第一个正数](https://leetcode-cn.com/problems/first-missing-positive/) | [题解](skill/缺失的第一个正数) | 2022-04-20 | 把自己当作hash |
 | [33. 搜索旋转排序数组](https://leetcode-cn.com/problems/search-in-rotated-sorted-array/) | [题解](skill/搜索旋转排序数组) | 2022-04-21 |                |
 | [142. 环形链表 II](https://leetcode-cn.com/problems/linked-list-cycle-ii/) | [题解](skill/环形链表)         | 2022-04-22 | 快慢指针       |
 | [8. 字符串转换整数 (atoi)](https://leetcode-cn.com/problems/string-to-integer-atoi/) | [题解](skill/字符串转换整数)   | 2022-04-23 | 处理溢出的细节 |
+| [239. 滑动窗口最大值](https://leetcode-cn.com/problems/sliding-window-maximum/) |                                | 2022-04-23 | 双端队列       |
 
 
 
@@ -93,4 +94,12 @@
 | 题目                                                         | 题解                        | 时间       | 思路      |
 | ------------------------------------------------------------ | --------------------------- | ---------- | --------- |
 | [148. 排序链表](https://leetcode-cn.com/problems/sort-list/) | [题解](linkedlist/排序链表) | 2022-04-23 | 链表+归并 |
+
+
+
+## 滑动窗口
+
+| 题目                                                         | 题解                          | 时间       | 思路     |
+| ------------------------------------------------------------ | ----------------------------- | ---------- | -------- |
+| [76. 最小覆盖子串](https://leetcode-cn.com/problems/minimum-window-substring/) | [题解](slidewin/最小覆盖字串) | 2022-04-24 | 滑动窗口 |
 
