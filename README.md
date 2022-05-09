@@ -69,6 +69,7 @@
 | [142. 环形链表 II](https://leetcode-cn.com/problems/linked-list-cycle-ii/) | [题解](skill/环形链表)         | 2022-04-22 | 快慢指针       |
 | [8. 字符串转换整数 (atoi)](https://leetcode-cn.com/problems/string-to-integer-atoi/) | [题解](skill/字符串转换整数)   | 2022-04-23 | 处理溢出的细节 |
 | [239. 滑动窗口最大值](https://leetcode-cn.com/problems/sliding-window-maximum/) |                                | 2022-04-23 | 双端队列       |
+| [942. 增减字符串匹配](https://leetcode.cn/problems/di-string-match/) | [题解](skill/增减字符串匹配)   | 2022-05-09 | 双指针         |
 
 
 
