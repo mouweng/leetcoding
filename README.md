@@ -95,6 +95,7 @@
 | 题目                                                         | 题解                        | 时间       | 思路      |
 | ------------------------------------------------------------ | --------------------------- | ---------- | --------- |
 | [148. 排序链表](https://leetcode-cn.com/problems/sort-list/) | [题解](linkedlist/排序链表) | 2022-04-23 | 链表+归并 |
+| [剑指 Offer 36. 二叉搜索树与双向链表](https://leetcode.cn/problems/er-cha-sou-suo-shu-yu-shuang-xiang-lian-biao-lcof/) |                             | 2022-06-09 | 中序遍历  |
 
 
 
