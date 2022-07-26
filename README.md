@@ -23,14 +23,12 @@
 | leetcode | [76. 最小覆盖子串](https://leetcode-cn.com/problems/minimum-window-substring/) | 2022-04-15 | medium |
 | leetcode | [85. 最大矩形](https://leetcode-cn.com/problems/maximal-rectangle/) | 2022-04-15 | medium |
 | codetop | [128. 最长连续序列](https://leetcode-cn.com/problems/longest-consecutive-sequence/) | 2022-04-15 | medium |
-|                  |                                                              |            |        |
 | leetcode双周赛76 | [6061. 买钢笔和铅笔的方案数](https://leetcode-cn.com/problems/number-of-ways-to-buy-pens-and-pencils/) | 2022-04-16 | medium |
 | leetcode双周赛76 | [6062. 设计一个 ATM 机器](https://leetcode-cn.com/problems/design-an-atm-machine/) | 2022-04-16 | medium |
 | codetop | [662. 二叉树最大宽度](https://leetcode-cn.com/problems/maximum-width-of-binary-tree/) | 2022-04-17 | medium |
 | codetop | [470. 用 Rand7() 实现 Rand10()](https://leetcode-cn.com/problems/implement-rand10-using-rand7/) | 2022-04-17 | easy |
 | codetop | [32. 最长有效括号](https://leetcode-cn.com/problems/longest-valid-parentheses/) | 2022-04-17 | hard |
-
-
+| 字节面试 | [题解-从A中生成比N小的最大数](search/从A中生成比N小的最大数) | 2022-07-26 | hard |
 
 
 
@@ -70,17 +68,19 @@
 | [8. 字符串转换整数 (atoi)](https://leetcode-cn.com/problems/string-to-integer-atoi/) | [题解](skill/字符串转换整数)   | 2022-04-23 | 处理溢出的细节 |
 | [239. 滑动窗口最大值](https://leetcode-cn.com/problems/sliding-window-maximum/) |                                | 2022-04-23 | 双端队列       |
 | [942. 增减字符串匹配](https://leetcode.cn/problems/di-string-match/) | [题解](skill/增减字符串匹配)   | 2022-05-09 | 双指针         |
+| [560. 和为 K 的子数组](https://leetcode.cn/problems/subarray-sum-equals-k/) |                                | 2022-06-13 | 前缀和+hash    |
 
 
 
 ## BFS/DFS
 
-| 题目                                                         | 题解                        | 时间       | 思路     |
-| ------------------------------------------------------------ | --------------------------- | ---------- | -------- |
-| [93. 复原 IP 地址](https://leetcode-cn.com/problems/restore-ip-addresses/) | [题解](search/复原 IP 地址) | 2022-04-20 | BFS+回溯 |
-| [22. 括号生成](https://leetcode-cn.com/problems/generate-parentheses/) | [题解](search/括号生成)     | 2022-04-20 | BFS+回溯 |
-
-
+| 题目                                                         | 题解                            | 时间       | 思路           |
+| ------------------------------------------------------------ | ------------------------------- | ---------- | -------------- |
+| [93. 复原 IP 地址](https://leetcode-cn.com/problems/restore-ip-addresses/) | [题解](search/复原 IP 地址)     | 2022-04-20 | BFS+回溯       |
+| [22. 括号生成](https://leetcode-cn.com/problems/generate-parentheses/) | [题解](search/括号生成)         | 2022-04-20 | BFS+回溯       |
+| [297. 二叉树的序列化与反序列化](https://leetcode.cn/problems/serialize-and-deserialize-binary-tree/) |                                 | 2022-06-09 | DFS            |
+| [剑指 Offer 54. 二叉搜索树的第k大节点](https://leetcode.cn/problems/er-cha-sou-suo-shu-de-di-kda-jie-dian-lcof/) |                                 | 2022-06-10 | 树的非递归遍历 |
+| [蔚来笔试-合法的括号字符串](search/合法的括号字符串)         | [题解](search/合法的括号字符串) | 2022-07-26 | dfs            |
 
 ## 贪心
 
@@ -101,7 +101,7 @@
 
 ## 滑动窗口
 
-| 题目                                                         | 题解                          | 时间       | 思路     |
-| ------------------------------------------------------------ | ----------------------------- | ---------- | -------- |
-| [76. 最小覆盖子串](https://leetcode-cn.com/problems/minimum-window-substring/) | [题解](slidewin/最小覆盖字串) | 2022-04-24 | 滑动窗口 |
-
+| 题目                                                         | 题解                            | 时间       | 思路           |
+| ------------------------------------------------------------ | ------------------------------- | ---------- | -------------- |
+| [76. 最小覆盖子串](https://leetcode-cn.com/problems/minimum-window-substring/) | [题解](slidewin/最小覆盖字串)   | 2022-04-24 | 滑动窗口       |
+| [用友笔试-最长连续子数组](slidewin/最长连续子数组)           | [题解](slidewin/最长连续子数组) | 2022-07-26 | 最长连续子数组 |
